@@ -1,0 +1,109 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+/*index page*/
+.container {
+	min-height: 400px;
+	width: 550px;
+	border: 1px solid black;
+	margin: 0 auto;
+	background-color: silver;
+	margin-top: 50px;
+	padding: 5px;
+	text-align: center;
+
+
+}
+/*wall page*/
+.container2 {
+	min-height: 400px;
+	width: 550px;
+	border: 1px solid black;
+	margin: 0 auto;
+	background-color: silver;
+	margin-top: 50px;
+	padding: 5px;
+
+
+}
+/*wall page*/
+.container2 h1, h3{
+	text-align: center;
+	background-color: gray;
+}
+
+#logout {
+	text-align: right;
+	display: block;
+	background-color: white;
+}
+
+/*index page*/
+.login {
+	height: 150px;
+	width: 220;
+	background-color: gray;
+	border: 1px solid black;
+	display: inline-block;
+	margin: 10px;
+	margin-right: 50px;
+	margin-left: 10px;
+	padding: 5px;
+	vertical-align: top;
+}
+/*index page*/
+.registration {
+	height: 250px;
+	width: 260px;
+	background-color: gray;
+	border: 1px solid black;
+	display: inline-block;
+	margin: 10px;
+	padding: 5px;
+	text-align: left;
+}
+/*index page*/
+.registration input {
+	width: 200px;
+	margin-left: 45px;
+}
+/*index page*/
+.flash_messages {
+	height: 100;
+	width: 500px;
+	border: 1px solid black;
+	margin-left: 15px;
+	color: red;
+	display: inline-block;
+}
+
+
+/*wall page*/
+#content {
+	min-height: 400px;
+	width: 545px;
+	background-color: silver;
+	margin-top: 5px;
+	padding: 5px;
+}
+
+/*wall page*/
+#messages {
+	min-height: 50px;
+	width: 525px;
+	background-color: white;
+	margin: 5px;
+	padding: 5px;
+}
+/*wall page*/
+#comments {
+	min-height: 50px;
+	width: 500px;
+	background-color: gray;
+	margin: 5px;
+	padding: 5px;
+}
+
+
+

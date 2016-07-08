@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>The Wall</title>
+	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='styles.css')}}">
+</head>
+<body>
+	<div class='container2'><!--opem-->
+		<div id='header'><!--open-->
+			<h1>Congratulations</h1>
+			<h3>Your logged into THE WALL</h3>
+			<a href="/logout" id="logout">logout</a>
+		</div><!--close header-->
+		<div id='content'><!--open-->
+				<h1>Post a message</h1>
+					<form action="/messages" method="POST">
+						<input type='hidden' name="message_form" value='messages'>
+						<input type='textarea' name='messages'>
+						<input type='submit' value='post a message'>
+					</form>
+						<div id='messages'><!--open-->
+						{% for message in messages %}
+
+							<h3>{{message['first_name']}} {{message['last_name']}} {{message['created_at']}}</h3>
+							<p>{{message['messages']}}</p>
+								{% for comment in comments%}
+								{% if comment['message_id'] == message['id']%}
+									<div id="comments">
+										{{comment['first_name']}} {{comment['last_name']}} {{comment['created_at']}}
+										<p>{{comment['comments']}}</p>
+									</div>
+									{% endif %}
+								{% endfor %}
+									<form action="/comments" method="POST">
+										<input type='hidden' name="message_id" value='{{message['id']}}'>
+										<input type='textarea' name='comments'>
+										<input type='submit' value='post a comment'>
+									</form>
+								{% endfor %}
+						</div><!--close messages-->
+		
+		</div><!--close content-->
+	<!-- {% for message in messages %}
+		<p>{{message.messages}}</p>
+		<p>{{message.id}}</p>
+		<form action="/get_comments">
+			<input type="hidden" name='message.id' value='{{message.id}}'>
+			<input type="text" name="comment">
+			<input type="submit" value="comments">
+		</form>
+	{% endfor %} -->
+	</div><!--close container-->
+</body>
+</html>

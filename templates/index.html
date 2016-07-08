@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Login Registration</title>
+	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='styles.css')}}">
+</head>
+<body>
+	<div class="container">
+		<h2>Welcome</h2>
+		<h4>Just login if you have registered</h4>
+		<hr>
+		<div class="login">
+			<h2>Login</h2>
+
+			<form action="/login_reg" method="POST">
+				<label>Email:<br>
+					<input type="text" name="emails"></label><br>
+				<label>Password:<br>
+					<input type="text" name="password"></label><br>
+					<input type="submit" name="submit">
+			</form>
+			<!-- <a href="/edit">Edit |</a>
+			<a href="/edit">Delete</a> -->
+
+		</div>
+		<div class="registration">
+			<h2>Registration</h2>
+			<form action="/register" method="POST">
+				<label>First Name:<br>
+					<input type="text" name="first_name"></label><br>
+				<label>Last Name:<br>
+					<input type="text" name="last_name"></label><br>
+				<label>Email:<br>
+					<input type="text" name="emails"></label><br>
+				<label>Password:<br>
+					<!--make sure to change input type to password field so that it doesnt show -->
+					<input type="text" name="password"></label><br>
+				<label>Confirmed Password:<br>
+					<input type="text" name="con_password"></label><br>
+					<input type="submit" name="submit">
+			</form>
+			<!-- <a href="/edit">Edit |</a>
+			<a href="/edit">Delete</a> -->
+		</div>
+			<div class='flash_messages'>
+				{% with messages = get_flashed_messages() %}
+					{% if messages %}
+						{% for message in messages %}
+							<p>{{message}}</p>
+						{% endfor %}
+					{% endif %}
+				{% endwith %}
+
+			</div>
+	</div>
+</body>
+</html>
